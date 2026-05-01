@@ -1,0 +1,9 @@
+{
+  "name": "couple-calendar",
+  "version": "1.0.0",
+  "description": "커플 공유 캘린더 서버",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  }
+}

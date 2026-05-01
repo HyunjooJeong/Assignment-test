@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>커플 캘린더</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>💑 커플 캘린더</h1>
+      <p>파트너와 함께 이벤트를 공유하고 실시간으로 동기화하세요.</p>
+    </header>
+
+    <section id="user-section" class="panel">
+      <h2>사용자 설정</h2>
+      <div id="user-form" class="card">
+        <label>이름</label>
+        <input id="user-name" placeholder="이름 입력" />
+        <label>이메일 (선택)</label>
+        <input id="user-email" placeholder="email@example.com" />
+        <button id="create-user">사용자 생성</button>
+      </div>
+      <div id="user-info" class="card hidden"></div>
+    </section>
+
+    <section id="invite-section" class="panel hidden">
+      <h2>파트너 연결</h2>
+      <div class="card">
+        <button id="generate-invite">초대 코드 생성</button>
+        <div class="notice">
+          <strong>초대 코드:</strong> <span id="invite-code">-</span>
+        </div>
+      </div>
+      <div class="card">
+        <label>파트너 초대 코드 입력</label>
+        <input id="accept-code" placeholder="초대 코드 입력" />
+        <button id="accept-invite">파트너 연결</button>
+      </div>
+    </section>
+
+    <section id="calendar-section" class="panel hidden">
+      <h2>📅 캘린더</h2>
+      <div class="card status-card">
+        <div>👤 사용자: <span id="display-user"></span></div>
+        <div>💑 couple_id: <span id="display-couple"></span></div>
+        <div>🔗 초대 코드: <span id="display-invite">-</span></div>
+      </div>
+
+      <div class="card event-form-card">
+        <h3>새 이벤트</h3>
+        <label>제목</label>
+        <input id="event-title" placeholder="이벤트 제목" />
+        <label>설명</label>
+        <textarea id="event-description" placeholder="간단한 설명"></textarea>
+        <label>시작</label>
+        <input id="event-start" type="datetime-local" />
+        <label>종료</label>
+        <input id="event-end" type="datetime-local" />
+        <button id="save-event">이벤트 저장</button>
+        <button id="cancel-edit" class="secondary hidden">편집 취소</button>
+      </div>
+
+      <div class="card">
+        <h3>📝 이벤트 목록</h3>
+        <div id="event-list"></div>
+      </div>
+    </section>
+
+    <div id="message" class="toast hidden"></div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
